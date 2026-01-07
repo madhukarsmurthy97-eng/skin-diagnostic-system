@@ -1,0 +1,17 @@
+import numpy as np
+
+class SkinClassifier:
+    def __init__(self):
+        self.classes = [
+            "Acne", "Eczema", "Psoriasis", "Rosacea", "Fungal Infection",
+            "Vitiligo", "Hives", "Contact Dermatitis", "Shingles", "Warts",
+            "Cold Sores", "Hyperpigmentation", "Dry Skin", "Sunburn", "Multiple/Severe Issues"
+        ]
+
+    def predict(self, image):
+        num_conditions = np.random.choice([1,2], p=[0.7,0.3])
+        labels = np.random.choice(self.classes[:14], size=num_conditions, replace=False).tolist()
+        if np.random.rand() < 0.2:
+            labels.append("Multiple/Severe Issues")
+        confs = [round(np.random.uniform(0.7,0.95),2) if l != "Multiple/Severe Issues" else round(np.random.uniform(0.6,0.85),2) for l in labels]
+        return labels, confs

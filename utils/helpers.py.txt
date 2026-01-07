@@ -1,0 +1,18 @@
+from io import BytesIO
+import matplotlib.pyplot as plt
+from PIL import Image
+
+def confidence_bar(colors, confs, labels):
+    fig, ax = plt.subplots(figsize=(5,len(confs)*0.4))
+    y_pos = range(len(confs))
+    ax.barh(y_pos, confs, color=colors)
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(labels)
+    ax.set_xlim(0,1)
+    ax.set_xlabel("Confidence / Severity")
+    plt.tight_layout()
+    buf = BytesIO()
+    plt.savefig(buf, format='png')
+    plt.close(fig)
+    buf.seek(0)
+    return Image.open(buf)

@@ -1,3 +1,19 @@
+## Advanced AI Techniques Used
+
+- CNN with Transfer Learning (ResNet18)
+- Multi-Agent System Architecture
+- Medical Image Classification
+- Confidence-based Evaluation
+- Web-based User Interface
+
+## Multi-Agent Architecture
+
+1. Data Ingestion Agent – Receives skin image
+2. Classification Agent – CNN-based disease detection
+3. Recommendation Agent – Medical advice generation
+4. UI Agent – User interaction and report display
+
+
 # 🩺 Skin Diagnostic System
 
 A **hospital-style skin diagnostic system** built with Python and Gradio.  

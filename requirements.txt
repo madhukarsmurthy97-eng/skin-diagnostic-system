@@ -1,5 +1,7 @@
 torch
 torchvision
+Pillow
 gradio
-pillow
-numpy
+transformers
+sentencepiece
+
